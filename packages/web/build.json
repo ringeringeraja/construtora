@@ -1,0 +1,14 @@
+{
+  "tsTranspileOnly": true,
+  "externals": {
+    "variables": {
+      "feedback": true,
+      "notification": true,
+      "releases": true,
+      "productName": "Capsul Notas",
+      "productLogo": "logo.png",
+      "signinText": "Acesso ao painel de logística",
+      "signupForm": true
+    }
+  }
+}
