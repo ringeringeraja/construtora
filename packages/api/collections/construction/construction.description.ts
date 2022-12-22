@@ -1,5 +1,7 @@
 import { makeDescription, Schema } from '@savitri/api'
 
+export type Construction = Schema<typeof schema>
+
 const schema = {
   $id: 'construction',
   properties: {
@@ -9,23 +11,44 @@ const schema = {
     },
     location: {
       description: 'Localização',
-      enum: [
-        'rural',
-        'urban',
-      ],
+      type: 'array',
+      items: {
+        enum: [
+          'rural',
+          'urban',
+        ],
+      },
+      maxItems: 4,
       s$format: 'select',
-      s$translate: true
+      // s$translate: true
     },
     address: {
       description: 'Endereço',
       $ref: 'geolocation',
       s$inline: true,
       s$index: 'address_line'
+    },
+    pictures: {
+      description: 'Imagens',
+      type: 'array',
+      items: {
+        $ref: 'file'
+      },
+      s$accept: [
+        'image/*'
+      ]
+    },
+    messages: {
+      description: 'Mensagens',
+      type: 'array',
+      items: {
+        $ref: 'message'
+      },
+      s$inline: true
     }
   }
 } as const
 
-export type Construction = Schema<typeof schema>
 export default makeDescription<typeof schema>(schema, {
   presets: [
     'crud'

@@ -1,5 +1,7 @@
 import { makeDescription, Schema } from '@savitri/api'
 
+export type Geolocation = Schema<typeof schema>
+
 const schema = {
   $id: 'geolocation',
   strict: true,
@@ -11,7 +13,7 @@ const schema = {
     state: {
       description: 'Estado (UF)',
       type: 'string',
-      s$mask: '@@'
+      s$mask: 'AA'
     },
     zipcode: {
       description: 'Código postal',
@@ -38,7 +40,6 @@ const schema = {
   }
 } as const
 
-export type Geolocation = Schema<typeof schema>
 export default makeDescription<typeof schema>(schema, {
   formLayout: {
     city: {

@@ -1,5 +1,5 @@
 {
-  "name": "omega",
+  "name": "ramses",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -19,14 +19,6 @@
     "@savitri/i18n-ptbr": "~1.0.1",
     "@savitri/system": "~1.0.0",
     "@savitri/ui": "~0.0.1",
-    "@savitri/web": "~1.1.211",
-    "chart.js": "^3.9.1",
-    "ramda": "^0.28.0",
-    "sqlite3": "^5.1.2",
-    "ts-node": "^10.8.0",
-    "uuid": "^8.3.2"
-  },
-  "devDependencies": {
-    "@types/uuid": "^8.3.4"
+    "@savitri/web": "~1.1.211"
   }
 }

@@ -1,7 +1,7 @@
 import { makeDescription } from '@savitri/api'
 export { Person as Employee } from '../person/person.description'
 
-export default makeDescription<unknown>({}, {
+export default makeDescription({
   $id: 'employee',
   alias: 'person'
 })
