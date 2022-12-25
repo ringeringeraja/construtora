@@ -9,6 +9,11 @@ const schema = {
       description: 'Nome',
       type: 'string'
     },
+    customer: {
+      description: 'Cliente',
+      $ref: 'customer',
+      s$inline: true
+    },
     created_at: {
       description: 'Data e hora',
       type: 'string',

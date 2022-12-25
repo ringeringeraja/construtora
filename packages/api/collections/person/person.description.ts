@@ -13,6 +13,13 @@ const schema = {
       description: 'Name',
       type: 'string'
     },
+    type: {
+      description: 'Tipo',
+      enum: [
+        'customer',
+        'dealer'
+      ]
+    },
     document: {
       description: 'Documento',
       type: 'string',
@@ -36,6 +43,7 @@ const schema = {
 
 export default makeDescription<typeof schema>(schema, {
   presets: [
-    'crud'
+    'crud',
+    'duplicate'
   ]
 })

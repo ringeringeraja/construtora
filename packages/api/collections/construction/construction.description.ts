@@ -9,17 +9,19 @@ const schema = {
       description: 'Nome',
       type: 'string'
     },
+    customer: {
+      description: 'Customer',
+      $ref: 'customer',
+      s$index: 'name'
+    },
     location: {
       description: 'Localização',
-      type: 'array',
-      items: {
-        enum: [
-          'rural',
-          'urban',
-        ],
-      },
+      enum: [
+        'rural',
+        'urban',
+      ],
       maxItems: 4,
-      s$format: 'select',
+      s$element: 'select',
       // s$translate: true
     },
     address: {
@@ -44,13 +46,22 @@ const schema = {
       items: {
         $ref: 'message'
       },
-      s$inline: true
+      s$inline: true,
+      s$maxDepth: 0
     }
   }
 } as const
 
 export default makeDescription<typeof schema>(schema, {
+  layout: {
+    name: 'grid',
+    options: {
+      title: 'name',
+      picture: 'pictures'
+    }
+  },
   presets: [
-    'crud'
+    'crud',
+    'duplicate'
   ]
 })

@@ -15,7 +15,7 @@ const schema = {
       enum: [
         'tool',
       ],
-      s$format: 'select',
+      s$element: 'select',
       s$translate: true
     },
     dealer: {

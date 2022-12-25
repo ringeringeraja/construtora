@@ -22,19 +22,37 @@ const options: AppOptions = {
     }
   },
   menuSchema: {
+    'Área do cliente': {
+      roles: [
+        'root'
+      ],
+      children: [
+        'dashboard-my-constructions'
+      ]
+    },
     'Geral': {
+      roles: [
+        'root'
+      ],
       children: [
         'dashboard-construction',
         'dashboard-material'
       ]
     },
     'Recursos humanos': {
+      roles: [
+        'root'
+      ],
       children: [
         'dashboard-customer',
         'dashboard-employee',
+        'dashboard-geolocation',
       ]
     },
     'Administrativo': {
+      roles: [
+        'root'
+      ],
       children: [
         'dashboard-user'
       ]

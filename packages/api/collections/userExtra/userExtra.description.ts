@@ -7,7 +7,8 @@ const schema = {
   properties: {
     person: {
       description: 'Pessoa',
-      $ref: 'person'
+      $ref: 'person',
+      s$inline: true
     }
   }
 } as const
